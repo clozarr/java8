@@ -11,7 +11,12 @@ public class App {
 		lambdaApp.ordernarConLambda();
 		System.out.println("== Calculando el promedio ==");
 		lambdaApp.calcularPromedio();
-		
+		System.out.println("====Scopes=======");
+		Scopes scopesApp = new Scopes();
+		double resultado = scopesApp.probarVariableLocal();
+		System.out.println("(Variable Local) El resultado es: " + resultado);
+		resultado = scopesApp.probarStaticVariables();
+		System.out.println("(Variable static) El resultado es: " + resultado);
 
 	}
 

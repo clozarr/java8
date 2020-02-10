@@ -1,4 +1,7 @@
-package com.clozarr.lambda;
+package com.clozarr.app;
+
+import com.clozarr.lambda.LambdaApp;
+import com.clozarr.lambda.Scopes;
 
 public class App {
 

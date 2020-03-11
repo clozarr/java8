@@ -37,7 +37,9 @@ public class Queue<T> {
 	public void pop() {
 
 		if (!isEmpty()) {
+			
           System.out.println("Deleting item " + items[pointer]);
+          
 			while (pointer < index) {
 				
 				Item<T> item = items[++pointer];
@@ -49,6 +51,9 @@ public class Queue<T> {
 			pointer = 0;
 			index--;
             
+		}else {
+			
+			System.out.println("¡Failed deleting item,  queue is empty!");
 		}
 	}
 
@@ -59,7 +64,7 @@ public class Queue<T> {
 
 	public boolean isEmpty() {
 
-		return items.length == 0;
+		return index == -1;
 	}
 
 	public int size() {

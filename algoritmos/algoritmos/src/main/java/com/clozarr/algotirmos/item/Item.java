@@ -1,4 +1,4 @@
-package com.clozarr.algoritmos.queue;
+package com.clozarr.algotirmos.item;
 
 public class Item<T> {
 

@@ -2,9 +2,10 @@ package com.clozarr.algoritmos.queue;
 
 import java.util.Arrays;
 
+import com.clozarr.algoritmos.collection.ICollection;
 import com.clozarr.algotirmos.item.Item;
 
-public class Queue<T> {
+public class Queue<T> implements ICollection<T> {
 
 	private Item<T> items[] = null;
 	private static int DEFAULT_SIZE = 3;
@@ -22,6 +23,7 @@ public class Queue<T> {
 		this(DEFAULT_SIZE);
 	}
 
+	@Override
 	public void push(T value) {
 
 		if (!isFull()) {
@@ -36,6 +38,18 @@ public class Queue<T> {
 
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public T peek() {
+		// TODO Auto-generated method stub
+		if (!isEmpty())
+			return (T) items[0];
+		else
+			System.out.println("¡Failed peek item, Queue is empty!");
+		return null;
+	}
+
+	@Override
 	public void pop() {
 
 		if (!isEmpty()) {
@@ -59,27 +73,32 @@ public class Queue<T> {
 		}
 	}
 
+	@Override
 	public boolean isFull() {
 
 		return this.count() == this.size();
 	}
 
+	@Override
 	public boolean isEmpty() {
 
 		return this.count() == 0;
 	}
 
+	@Override
 	public int size() {
 
 		return items.length;
 	}
 
+	@Override
 	public int count() {
 
 		return (this.index + 1);
 	}
 
-	public void printQueue() {
+	@Override
+	public void print() {
 		// TODO Auto-generated method stub
 		Arrays.stream(this.items).filter(element -> element != null).forEach(System.out::println);
 	}

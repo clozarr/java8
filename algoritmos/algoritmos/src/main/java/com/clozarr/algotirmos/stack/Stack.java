@@ -2,10 +2,11 @@ package com.clozarr.algotirmos.stack;
 
 import java.util.Arrays;
 
+import com.clozarr.algoritmos.collection.ICollection;
 import com.clozarr.algotirmos.item.Item;
 
 
-public class Stack<T> {
+public class Stack<T> implements ICollection<T> {
 
 	private Item<T> items[];
 	private static int DEFAULT_SIZE = 3;
@@ -22,6 +23,7 @@ public class Stack<T> {
 		this(DEFAULT_SIZE);
 	}
 
+	@Override
 	public void push(T value) {
 
 		if (!isFull()) {
@@ -36,7 +38,8 @@ public class Stack<T> {
 		}
 
 	}
-
+   
+	@Override
 	public void pop() {
 
 		if (!isEmpty()) {
@@ -50,29 +53,46 @@ public class Stack<T> {
 		}
 
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public T peek() {
+		// TODO Auto-generated method stub
+		if(!isEmpty())
+			return (T) items[index];
+		else
+			System.out.println("¡Failed peek item, Stack is empty!");
+		return null;
+	}
+	
 
+	@Override
 	public boolean isEmpty() {
 
 		return this.count() == 0;
 	}
 
+	@Override
 	public boolean isFull() {
 
 		return this.count() == this.size();
 	}
 
+	@Override
 	public int size() {
 
 		return this.items.length;
 
 	}
 
+	@Override
 	public int count() {
 
 		return (this.index + 1);
 	}
 	
-	public void printStack() {
+	@Override
+	public void print() {
 		
 		Arrays.stream(items).filter(elemento -> elemento != null).forEach(System.out::println);
 	}

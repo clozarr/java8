@@ -1,7 +1,5 @@
 package com.clozarr.algoritmos.ordenamiento;
 
-import java.util.Arrays;
-
 public class Ordenamiento {
 
 	/**
@@ -71,6 +69,11 @@ public class Ordenamiento {
 
 	}
 
+	/*
+	 * InsertionSort
+	 * 
+	 * @author carlos
+	 */
 	public static int[] insertionSort(int[] items) {
 
 		int menor = 0;
@@ -91,4 +94,73 @@ public class Ordenamiento {
 		return items;
 
 	}// Fin método
+
+	/*
+	 * QuickSort
+	 *
+	 **/
+	public static int[] quickSort(int[] items) {
+		return items;
+	}
+
+	/*
+	 * Selection Sort Iterative
+	 **/
+	public static int[] selectionSort(int[] items) {
+
+		int swapElement = 0;
+		for (int i = 0; i < items.length; i++) {
+
+			int indexMenor = i;
+
+			for (int j = (i + 1); j < items.length; j++) {
+
+				if (items[indexMenor] > items[j]) {
+
+					indexMenor = j;
+
+				}
+			}
+
+			swapElement = items[i];
+			items[i] = items[indexMenor];
+			items[indexMenor] = swapElement;
+
+		}
+
+		return items;
+	}
+
+	/*
+	 * Selection Sort recursive
+	 **/
+	public static int[] selectionSort(int[] items, int initialIndexArray) {
+
+		if (initialIndexArray == (items.length - 1)) {
+
+			return items;
+
+		} else {
+
+			int swapElement = 0;
+
+			int indexMenor = initialIndexArray;
+
+			for (int j = (initialIndexArray + 1); j < items.length; j++) {
+
+				if (items[indexMenor] > items[j]) {
+
+					indexMenor = j;
+
+				}
+			}
+
+			swapElement = items[initialIndexArray];
+			items[initialIndexArray] = items[indexMenor];
+			items[indexMenor] = swapElement;
+
+			return selectionSort(items, initialIndexArray + 1);
+		}
+	}
+
 }

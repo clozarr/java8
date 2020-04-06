@@ -3,8 +3,6 @@ package com.clozarr.algoritmos;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
 
 import com.clozarr.algoritmos.ordenamiento.Ordenamiento;
 import com.clozarr.algoritmos.queue.Queue;
@@ -16,33 +14,7 @@ import com.clozarr.algotirmos.stack.Stack;
  */
 public class App {
 
-	static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
-
-		int bobScore = 0;
-		int aliceScore = 0;
-
-		if (a.size() == b.size()) {
-
-			for (int i = 0; i < a.size(); i++) {
-
-				if (a.get(i).intValue() > b.get(i).intValue()) {
-
-					aliceScore++;
-
-				} else if (a.get(i).intValue() < b.get(i).intValue()) {
-
-					bobScore++;
-				}
-			}
-
-		}
-
-		List<Integer> scores = new LinkedList<Integer>();
-		scores.add(aliceScore);
-		scores.add(bobScore);
-		return scores;
-	}
-
+	
 	public static void main(String[] args) {
 
 		boolean sw = true;
@@ -342,7 +314,7 @@ public class App {
 					2115, 7275, 7349, 7428, 5781, 2958, 1880, 3572, 5976, 3631, 2753, 5206, 5299, 4306, 6405, 4679,
 					7151, 6166, 5668, 6520, 1596, 1400, 5499, 2882, 2326, 6094, 1641, 3893, 552, 2942, 3957, 2923, 7378,
 					730, 4901, 4257, 2039, 2777, 6030, 5647, 3225, 6657, 187, 1240, 2715, 6335, 1038, 2739, 692, 3918 };
-			
+
 			Instant ini = Instant.now();
 			elementos = Ordenamiento.insertionSort(elementos);
 			Instant fin = Instant.now();

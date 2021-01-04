@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 import com.clozarr.algoritmos.ordenamiento.Ordenamiento;
 import com.clozarr.algoritmos.queue.Queue;
-import com.clozarr.algotirmos.stack.Stack;
+import com.clozarr.algoritmos.stack.Stack;
 
 /**
  * Hello world!

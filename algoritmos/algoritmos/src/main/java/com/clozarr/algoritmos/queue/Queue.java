@@ -3,7 +3,7 @@ package com.clozarr.algoritmos.queue;
 import java.util.Arrays;
 
 import com.clozarr.algoritmos.collection.ICollection;
-import com.clozarr.algotirmos.item.Item;
+import com.clozarr.algoritmos.item.Item;
 
 public class Queue<T> implements ICollection<T> {
 

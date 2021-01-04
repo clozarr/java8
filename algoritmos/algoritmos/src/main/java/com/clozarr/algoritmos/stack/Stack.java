@@ -1,9 +1,9 @@
-package com.clozarr.algotirmos.stack;
+package com.clozarr.algoritmos.stack;
 
 import java.util.Arrays;
 
 import com.clozarr.algoritmos.collection.ICollection;
-import com.clozarr.algotirmos.item.Item;
+import com.clozarr.algoritmos.item.Item;
 
 
 public class Stack<T> implements ICollection<T> {

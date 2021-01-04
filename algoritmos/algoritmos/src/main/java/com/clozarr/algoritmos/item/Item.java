@@ -1,4 +1,4 @@
-package com.clozarr.algotirmos.item;
+package com.clozarr.algoritmos.item;
 
 public class Item<T> {
 
